@@ -11,9 +11,10 @@ class CoffeeNavBar extends StatelessWidget {
         onTabChange: (value) => onTabChange!(value),
         color: const Color(0xffa2a2a2),
         activeColor: const Color(0xffc67c4e),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         tabs: const [
           GButton(icon: Icons.home),
+          GButton(icon: Icons.search),
           GButton(icon: Icons.favorite),
           GButton(icon: Icons.man),
         ]);

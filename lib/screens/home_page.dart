@@ -1,6 +1,7 @@
 import 'package:coffee_shop/components/nav_bar.dart';
 import 'package:coffee_shop/screens/favorites_screen.dart';
 import 'package:coffee_shop/screens/products_screen.dart';
+import 'package:coffee_shop/screens/search_screen.dart';
 import 'package:coffee_shop/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +23,9 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = [
     //homescreen
     const HomeScreen(),
+
+    //search
+    const SearchScreen(),
 
     //favoritescreen
     const FavoritesScreen(),

@@ -1,6 +1,5 @@
 import 'package:coffee_shop/components/cart_icon.dart';
 import 'package:coffee_shop/components/coffee_card.dart';
-import 'package:coffee_shop/components/search_bar.dart';
 import 'package:coffee_shop/constants/text_constant.dart';
 import 'package:coffee_shop/models/coffee_model.dart';
 import 'package:coffee_shop/provider/coffee_cart_provider.dart';
@@ -10,11 +9,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:coffee_shop/provider/coffee_product_provider.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
     final allProducts = ref.watch(coffeeProductsProvider);
     final cart = ref.watch(cartStateProvider);
     final favorites = ref.watch(favoriteStateProvider);
@@ -61,8 +65,6 @@ class HomeScreen extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CoffeeSearchbar(),
-              const HeaderText(text: "Available Offers"),
               const SizedBox(
                 height: 12,
               ),
@@ -72,7 +74,7 @@ class HomeScreen extends ConsumerWidget {
               const SizedBox(
                 height: 12,
               ),
-              const HeaderText(text: "Products"),
+              const HeaderText(text: "Explore Products"),
               const SizedBox(
                 height: 12,
               ),

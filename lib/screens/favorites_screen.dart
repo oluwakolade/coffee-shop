@@ -38,6 +38,7 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
 
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: const HeaderText(text: "Favorites"),
           centerTitle: true,
         ),
