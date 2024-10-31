@@ -90,7 +90,7 @@ class ProductTitle extends StatelessWidget {
       style: GoogleFonts.montserrat(
           color: const Color(0xFF000000),
           fontWeight: FontWeight.bold,
-          fontSize: 13),
+          fontSize: 10),
     );
   }
 }
@@ -113,7 +113,7 @@ class ProductSubTitle extends StatelessWidget {
       style: GoogleFonts.montserrat(
           color: const Color(0xFFA2A2A2),
           fontWeight: FontWeight.normal,
-          fontSize: 12),
+          fontSize: 10),
     );
   }
 }

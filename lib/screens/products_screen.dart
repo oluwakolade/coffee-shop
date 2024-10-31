@@ -111,25 +111,25 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                   icon: const Icon(
                                     Icons.check,
                                     color: Color(0XFFC67C4e),
-                                    size: 14,
+                                    size: 12,
                                   ),
                                   label: const AppText(
                                       text: "Added",
                                       color: Color(0XFFC67C4E),
                                       fontWeight: FontWeight.bold,
-                                      fontsize: 14))
+                                      fontsize: 12))
                               : TextButton.icon(
                                   onPressed: () => onAddToCart(coffeeProduct),
                                   icon: const Icon(
                                     Icons.add,
                                     color: Color(0XFFC67C4e),
-                                    size: 14,
+                                    size: 12,
                                   ),
                                   label: const AppText(
                                       text: "Add to cart",
                                       color: Color(0XFFC67C4E),
                                       fontWeight: FontWeight.bold,
-                                      fontsize: 14),
+                                      fontsize: 12),
                                 ),
 
                           //favorite icon
