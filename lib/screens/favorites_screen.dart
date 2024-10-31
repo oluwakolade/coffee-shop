@@ -37,6 +37,7 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
     }
 
     return Scaffold(
+        backgroundColor: const Color(0xffffffff),
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title: const HeaderText(text: "Favorites"),

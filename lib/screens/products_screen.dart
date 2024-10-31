@@ -52,6 +52,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     //products list ui
 
     return Scaffold(
+      backgroundColor: const Color(0xffffffff),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,

@@ -29,9 +29,6 @@ class CoffeeDetails extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back_ios))
-        ],
       ),
       backgroundColor: const Color(0xfff9f9f9),
       body: Column(

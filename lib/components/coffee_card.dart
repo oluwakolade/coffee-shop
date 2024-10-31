@@ -23,51 +23,53 @@ class CoffeeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 15),
-      width: double.infinity,
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.15),
-              spreadRadius: 0,
-              blurRadius: 20, // Increased blur radius
-              offset: const Offset(0, 4),
-            )
+    return GridTile(
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 15),
+        width: double.infinity,
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.15),
+                spreadRadius: 0,
+                blurRadius: 20, // Increased blur radius
+                offset: const Offset(0, 4),
+              )
+            ],
+            color: const Color(0xffffffff),
+            borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //image
+
+            Stack(children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: GestureDetector(
+                    onTap: onImageTap,
+                    child: Image.network(
+                      coffeeImage,
+                      errorBuilder: (context, error, stackTrace) =>
+                          const Icon(Icons.error),
+                    )),
+              ),
+              Positioned(
+                top: 5,
+                right: 5,
+                child: favIcon,
+              )
+            ]),
+            ProductTitle(text: coffeeName),
+
+            ProductSubTitle(text: '\$${coffeePrice.toString()}'),
+            const Expanded(child: SizedBox()),
+            Center(child: textButton),
           ],
-          color: const Color(0xffffffff),
-          borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //image
-
-          Stack(children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: GestureDetector(
-                  onTap: onImageTap,
-                  child: Image.network(
-                    coffeeImage,
-                    errorBuilder: (context, error, stackTrace) =>
-                        const Icon(Icons.error),
-                  )),
-            ),
-            Positioned(
-              top: 5,
-              right: 5,
-              child: favIcon,
-            )
-          ]),
-          ProductTitle(text: coffeeName),
-
-          ProductSubTitle(text: '\$${coffeePrice.toString()}'),
-          const Expanded(child: SizedBox()),
-          Center(child: textButton),
-        ],
+        ),
       ),
     );
   }
