@@ -42,3 +42,48 @@ android {
 flutter {
     source = "../.."
 }
+
+
+
+
+
+
+// plugins {
+//     id "com.android.application"
+//     id "kotlin-android"
+//     id "dev.flutter.flutter-gradle-plugin" // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+// }
+
+// android {
+//     namespace = "com.example.coffee_shop"
+//     compileSdk = 34  // Replace flutter.compileSdkVersion with a fixed version
+
+//     compileOptions {
+//         sourceCompatibility = JavaVersion.VERSION_1_8
+//         targetCompatibility = JavaVersion.VERSION_1_8
+//     }
+
+//     kotlinOptions {
+//         jvmTarget = JavaVersion.VERSION_1_8
+//     }
+
+//     defaultConfig {
+//         applicationId = "com.example.coffee_shop"
+//         minSdk = 21  // Replace flutter.minSdkVersion with a fixed minimum SDK version
+//         targetSdk = 34  // Replace flutter.targetSdkVersion with a fixed version
+//         versionCode = 1  // Replace flutter.versionCode with a fixed version code
+//         versionName = "1.0"  // Replace flutter.versionName with a fixed version name
+//     }
+
+//     buildTypes {
+//         release {
+//             signingConfig = signingConfigs.debug
+//         }
+//     }
+// }
+
+// flutter {
+//     source = "../.."
+// }
+
+

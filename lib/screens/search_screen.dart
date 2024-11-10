@@ -50,14 +50,14 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
       // ),
       body: Column(children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 25),
           child: CoffeeSearchbar(
             onChanged: (value) =>
                 ref.read(searchQueryProvider.notifier).updateQuery(value),
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 10,
         ),
         filteredProducts.isEmpty
             ? const Center(child: BodyText(text: 'No products found'))

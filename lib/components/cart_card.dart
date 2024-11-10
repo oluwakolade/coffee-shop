@@ -46,11 +46,12 @@ class CartCard extends StatelessWidget {
           const Spacer(),
           // const Expanded(child: SizedBox()),
           IconButton(
-              onPressed: onDelete,
-              icon: const Icon(
-                Icons.delete,
-                color: Color(0xffc67c4e),
-              ))
+            onPressed: onDelete,
+            icon: const Icon(
+              Icons.delete,
+              color: Color(0xffc67c4e),
+            ),
+          )
         ],
       ),
     );

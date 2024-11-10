@@ -37,82 +37,83 @@ class _FavoritesScreenState extends ConsumerState<FavoritesScreen> {
     }
 
     return Scaffold(
-        backgroundColor: const Color(0xffffffff),
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          title: const HeaderText(text: "Favorites"),
-          centerTitle: true,
-        ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
-                childAspectRatio: 0.9,
-              ),
-              itemCount: favorites.length,
-              itemBuilder: (context, index) {
-                CoffeeProduct coffeeProduct = favorites[index];
+      backgroundColor: const Color(0xffffffff),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: const HeaderText(text: "Favorites"),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 20,
+              childAspectRatio: 0.9,
+            ),
+            itemCount: favorites.length,
+            itemBuilder: (context, index) {
+              CoffeeProduct coffeeProduct = favorites[index];
 
-                bool isInCart = cart.contains(coffeeProduct);
-                bool isInFav = favorites.contains(coffeeProduct);
+              bool isInCart = cart.contains(coffeeProduct);
+              bool isInFav = favorites.contains(coffeeProduct);
 
-                return CoffeeCard(
-                  coffeeName: coffeeProduct.name,
-                  coffeeImage: coffeeProduct.imageUrl,
-                  coffeePrice: coffeeProduct.price,
-                  onAddToCart: () => onAddToCart(coffeeProduct),
-                  onImageTap: () => null,
-                  //text button
-                  textButton: isInCart
-                      ? TextButton.icon(
-                          onPressed: null,
-                          icon: const Icon(
-                            Icons.check,
-                            color: Color(0XFFC67C4e),
-                            size: 14,
-                          ),
-                          label: const AppText(
-                              text: "Added",
-                              color: Color(0XFFC67C4E),
-                              fontWeight: FontWeight.bold,
-                              fontsize: 14))
-                      : TextButton.icon(
-                          onPressed: () => onAddToCart(coffeeProduct),
-                          icon: const Icon(
-                            Icons.add,
-                            color: Color(0XFFC67C4e),
-                            size: 14,
-                          ),
-                          label: const AppText(
-                              text: "Add to cart",
-                              color: Color(0XFFC67C4E),
-                              fontWeight: FontWeight.bold,
-                              fontsize: 14),
+              return CoffeeCard(
+                coffeeName: coffeeProduct.name,
+                coffeeImage: coffeeProduct.imageUrl,
+                coffeePrice: coffeeProduct.price,
+                onAddToCart: () => onAddToCart(coffeeProduct),
+                onImageTap: () => null,
+                //text button
+                textButton: isInCart
+                    ? TextButton.icon(
+                        onPressed: null,
+                        icon: const Icon(
+                          Icons.check,
+                          color: Color(0XFFC67C4e),
+                          size: 12,
                         ),
-
-                  //favorite icon
-
-                  favIcon: isInFav
-                      ? IconButton(
-                          onPressed: () => onRemoveFav(coffeeProduct),
-                          icon: const Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                            size: 16,
-                          ))
-                      : IconButton(
-                          onPressed: () => onAddFav(coffeeProduct),
-                          icon: const Icon(
-                            Icons.favorite_outline,
-                            color: Color(0XFFA2A2A2),
-                            size: 16,
-                          ),
+                        label: const AppText(
+                            text: "Added",
+                            color: Color(0XFFC67C4E),
+                            fontWeight: FontWeight.bold,
+                            fontsize: 12),
+                      )
+                    : TextButton.icon(
+                        onPressed: () => onAddToCart(coffeeProduct),
+                        icon: const Icon(
+                          Icons.add,
+                          color: Color(0XFFC67C4e),
+                          size: 12,
                         ),
-                );
-              }),
-        ));
+                        label: const AppText(
+                            text: "Add to cart",
+                            color: Color(0XFFC67C4E),
+                            fontWeight: FontWeight.bold,
+                            fontsize: 12),
+                      ),
+                //favorite icon
+
+                favIcon: isInFav
+                    ? IconButton(
+                        onPressed: () => onRemoveFav(coffeeProduct),
+                        icon: const Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                          size: 16,
+                        ),
+                      )
+                    : IconButton(
+                        onPressed: () => onAddFav(coffeeProduct),
+                        icon: const Icon(
+                          Icons.favorite_outline,
+                          color: Color(0XFFA2A2A2),
+                          size: 16,
+                        ),
+                      ),
+              );
+            }),
+      ),
+    );
   }
 }

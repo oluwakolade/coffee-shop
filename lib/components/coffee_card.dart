@@ -75,7 +75,6 @@ class CoffeeCard extends StatelessWidget {
               ProductSubTitle(text: '\$${coffeePrice.toString()}'),
               const Spacer(),
               Center(child: textButton),
-              const SizedBox(height: 10)
             ],
           );
         }),
